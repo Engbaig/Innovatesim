@@ -280,4 +280,857 @@
     display:flex;align-items:center;justify-content:center;
     background:var(--cream-2);margin-bottom:20px;
   }
-  .card-icon svg{width:24px;height:24px;stroke:var(--terracotta-dark);}... (truncated for brevity)
+  .card-icon svg{width:24px;height:24px;stroke:var(--terracotta-dark);}
+  .card h3{font-size:1.18rem;margin-bottom:10px;}
+  .card p{color:var(--ink-soft);font-size:0.95rem;}
+  .card .tag{
+    display:inline-block;margin-top:16px;font-family:'JetBrains Mono',monospace;
+    font-size:0.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-2);
+  }
+  .card .card-remove{
+    position:absolute;top:16px;right:16px;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--cream-2);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;font-size:0.85rem;color:var(--ink-soft);
+    line-height:1;
+  }
+  .card .card-remove:hover{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
+  .card{padding-top:30px;}
+  .card .card-remove{display:flex;}
+
+  /* Products section slightly tinted */
+  .products{position:relative;}
+
+  /* Add-product controls */
+  .admin-bar{
+    display:flex;align-items:center;gap:12px;
+  }
+
+  .admin-panel{
+    display:block;
+    background:var(--white);
+    border:1px dashed var(--terracotta);
+    border-radius:var(--radius);
+    padding:28px;
+    margin-bottom:40px;
+  }
+  .admin-panel h4{font-size:1rem;margin-bottom:16px;}
+  .admin-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  @media (max-width:600px){.admin-form-grid{grid-template-columns:1fr;}}
+  .admin-form-grid textarea{grid-column:1/-1;}
+  .admin-panel input, .admin-panel textarea{
+    width:100%;padding:11px 14px;border-radius:9px;border:1px solid var(--line);
+    background:var(--cream);font-family:'Inter',sans-serif;font-size:0.9rem;
+  }
+  .admin-panel input:focus, .admin-panel textarea:focus{outline:none;border-color:var(--terracotta);}
+  .admin-panel textarea{min-height:70px;resize:vertical;}
+
+  .image-upload-field{display:flex;flex-direction:column;gap:6px;}
+  .image-upload-field label{font-size:0.78rem;color:var(--ink-soft);font-weight:600;}
+  .image-upload-field input[type="file"]{
+    padding:9px 10px;font-size:0.85rem;background:var(--cream);
+  }
+  #pImagePreviewWrap{
+    display:flex;align-items:center;gap:10px;margin-top:4px;
+  }
+  #pImagePreview{
+    width:52px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--line);
+  }
+  #pImageRemove{
+    width:24px;height:24px;border-radius:50%;border:1px solid var(--line);
+    background:var(--white);cursor:pointer;font-size:0.8rem;color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;line-height:1;
+  }
+  #pImageRemove:hover{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
+
+  .card-photo{
+    width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:20px;
+  }
+
+  /* Consultancy - alternate bg */
+  .consultancy{background:var(--navy);color:var(--white);}
+  .consultancy .section-head h2, .consultancy .section-head .eyebrow{color:var(--white);}
+  .consultancy .eyebrow{color:#F0B79A;}
+  .consultancy .eyebrow::before{background:#F0B79A;}
+  .consultancy .section-head p{color:rgba(255,255,255,0.7);}
+  .consultancy .card{
+    background:rgba(255,255,255,0.05);
+    border-color:rgba(255,255,255,0.12);
+    padding:24px;
+  }
+  .consultancy .card:hover{
+    border-color:transparent;
+    box-shadow:0 20px 40px -18px rgba(0,0,0,0.4);
+  }
+  .consultancy .card h3, .consultancy .card p{color:var(--white);}
+  .consultancy .card p{color:rgba(255,255,255,0.7);font-size:0.88rem;}
+  .consultancy .card h3{font-size:1.02rem;}
+  .consultancy .card-icon{background:rgba(255,255,255,0.1);width:42px;height:42px;margin-bottom:16px;}
+  .consultancy .card-icon svg{stroke:#F0B79A;width:20px;height:20px;}
+  .consultancy .card .step-tag{
+    font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:#9FD3E0;
+    letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:10px;
+  }
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  @media (max-width:900px){.why-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.why-grid{grid-template-columns:1fr;}}
+  .why-item{padding:26px 0;border-top:2px solid var(--ink);}
+  .why-item strong{font-family:'Fraunces',serif;font-size:1.3rem;display:block;margin-bottom:10px;}
+  .why-item p{color:var(--ink-soft);font-size:0.93rem;}
+
+  /* Contact */
+  .contact{background:var(--white);border-top:1px solid var(--line);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-info-item{display:flex;gap:16px;margin-bottom:26px;}
+  .contact-info-item .ci-icon{
+    width:42px;height:42px;border-radius:10px;background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-info-item .ci-icon svg{width:20px;height:20px;stroke:var(--terracotta-dark);}
+  .contact-info-item h4{font-size:0.98rem;margin-bottom:3px;}
+  .contact-info-item p{font-size:0.92rem;color:var(--ink-soft);}
+
+  form{display:flex;flex-direction:column;gap:16px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+  label{font-size:0.8rem;font-weight:600;margin-bottom:6px;display:block;color:var(--ink);}
+  input,textarea,select{
+    width:100%;padding:13px 16px;border-radius:10px;
+    border:1px solid var(--line);background:var(--cream);
+    font-family:'Inter',sans-serif;font-size:0.95rem;color:var(--ink);
+    transition:border-color .15s;
+  }
+  input:focus,textarea:focus,select:focus{
+    outline:none;border-color:var(--terracotta);background:var(--white);
+  }
+  textarea{resize:vertical;min-height:110px;}
+
+  /* Chatbot widget */
+  .chatbot-card{
+    background:var(--cream-2);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    display:flex;flex-direction:column;
+    height:520px;
+    overflow:hidden;
+  }
+  .chatbot-header{
+    display:flex;align-items:center;gap:12px;
+    padding:18px 20px;
+    background:var(--navy);color:var(--white);
+  }
+  .chatbot-avatar{
+    width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .chatbot-avatar svg{width:20px;height:20px;}
+  .chatbot-header h4{color:var(--white);font-size:1rem;margin-bottom:2px;}
+  .chatbot-status{
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.6);
+    display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.06em;
+  }
+  .chatbot-status .dot{width:6px;height:6px;border-radius:50%;background:#7CD68A;display:inline-block;box-shadow:0 0 6px #7CD68A;}
+
+  .chatbot-messages{
+    flex:1;overflow-y:auto;padding:20px;
+    display:flex;flex-direction:column;gap:12px;
+    background:var(--white);
+  }
+  .chat-msg{
+    max-width:82%;padding:11px 15px;border-radius:14px;
+    font-size:0.92rem;line-height:1.5;
+  }
+  .chat-msg.bot{
+    background:var(--cream-2);color:var(--ink);
+    border-bottom-left-radius:4px;align-self:flex-start;
+  }
+  .chat-msg.user{
+    background:var(--terracotta);color:var(--white);
+    border-bottom-right-radius:4px;align-self:flex-end;
+  }
+  .chat-msg a{color:inherit;text-decoration:underline;}
+
+  .chatbot-quick-replies{
+    display:flex;gap:8px;flex-wrap:wrap;padding:12px 20px;
+    background:var(--white);border-top:1px solid var(--line);
+  }
+  .quick-reply-btn{
+    font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;
+    padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+    background:var(--cream);color:var(--ink);cursor:pointer;transition:all .15s;
+  }
+  .quick-reply-btn:hover{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
+
+  .chatbot-input-row{
+    display:flex;gap:10px;padding:16px 20px;
+    background:var(--white);border-top:1px solid var(--line);
+  }
+  .chatbot-input-row input{
+    flex:1;padding:11px 15px;border-radius:999px;
+    border:1px solid var(--line);background:var(--cream);
+    font-family:'Inter',sans-serif;font-size:0.92rem;
+  }
+  .chatbot-input-row input:focus{outline:none;border-color:var(--terracotta);background:var(--white);}
+  .chatbot-input-row button{border-radius:999px;}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(255,255,255,0.65);padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px;}
+  @media (max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  .footer-grid h5{color:var(--white);font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;}
+  .footer-grid a{display:block;color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:10px;transition:color .15s;}
+  .footer-grid a:hover{color:var(--white);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:26px;border-top:1px solid rgba(255,255,255,0.12);
+    font-size:0.82rem;flex-wrap:wrap;gap:12px;
+  }
+  .footer-logo{display:flex;align-items:center;gap:10px;color:var(--white);font-family:'Fraunces',serif;font-weight:700;margin-bottom:14px;}
+  .footer-desc{font-size:0.9rem;max-width:320px;color:rgba(255,255,255,0.55);}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+
+  ::selection{background:var(--terracotta);color:var(--white);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <div class="logo-mark"></div>
+      <div>
+        INNOVATESIM
+        <small>Technologies Inc.</small>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#consultancy">Consultancy</a>
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary" style="padding:11px 22px;font-size:0.88rem;">Get in Touch</a>
+      <button class="menu-toggle" id="mobileMenuBtn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNavPanel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav-panel" id="mobileNavPanel">
+    <a href="#products">Products</a>
+    <a href="#consultancy">Consultancy</a>
+    <a href="#about">About</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Healthcare Simulation &amp; Facility Consultancy</span>
+      <h1>Clinical training environments where <em>competence comes before the real patient.</em></h1>
+      <p class="lead">InnovateSim Technologies designs healthcare simulation products and advises hospitals, universities, and training centers on building the facilities that run them.</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="#consultancy" class="btn btn-ghost">Consultancy Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>15+</strong><span>Years in simulation</span></div>
+        <div><strong>120+</strong><span>Facilities delivered</span></div>
+        <div><strong>30+</strong><span>Countries served</span></div>
+      </div>
+    </div>
+
+    <div class="instrument reveal">
+      <div class="instrument-head"><span><span class="dot"></span>System Status: Live</span><span>SIM-CTRL/01</span></div>
+      <div class="dial-row">
+        <div class="dial">
+          <svg viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="26" stroke="rgba(255,255,255,0.18)" stroke-width="4"/>
+            <circle cx="32" cy="32" r="26" stroke="#C96A43" stroke-width="4" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="40"/>
+          </svg>
+          <div class="dial-value">87%</div>
+          <div class="dial-label">Fidelity</div>
+        </div>
+        <div class="dial">
+          <svg viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="26" stroke="rgba(255,255,255,0.18)" stroke-width="4"/>
+            <circle cx="32" cy="32" r="26" stroke="#7CD68A" stroke-width="4" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="90"/>
+          </svg>
+          <div class="dial-value">62%</div>
+          <div class="dial-label">Load</div>
+        </div>
+      </div>
+      <div class="wave">
+        <svg viewBox="0 0 400 70" preserveAspectRatio="none">
+          <path d="M0,35 Q20,5 40,35 T80,35 T120,35 T160,35 T200,35 T240,35 T280,35 T320,35 T360,35 T400,35" stroke="#9FD3E0" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="eyebrow">About InnovateSim</span>
+      <h2>We build the environments where clinical skills are earned safely.</h2>
+      <p style="margin-top:18px;color:var(--ink-soft);font-size:1.02rem;">
+        InnovateSim Technologies Inc. designs healthcare simulation products and advises hospitals, nursing and medical schools, and training centers on building the facilities that house them. From individual manikins to full-scale simulation centers, we cover the complete lifecycle: concept, design, installation, and ongoing support.
+      </p>
+      <p style="margin-top:16px;color:var(--ink-soft);font-size:1.02rem;">
+        Our teams bring together simulation engineering, clinical education, and facility planning under one roof — so clients deal with a single partner instead of stitching vendors together themselves.
+      </p>
+    </div>
+    <div class="about-panel reveal">
+      <ul>
+        <li><span class="num">01</span> Supplying simulation products with trusted service, and helping you incorporate them into your training programs</li>
+        <li><span class="num">02</span> Simulation facility and technical infrastructure design</li>
+        <li><span class="num">03</span> Installation, commissioning and activation</li>
+        <li><span class="num">04</span> User training, accreditation guidance and lifecycle support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="section-head-row" style="margin-bottom:32px;">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="eyebrow">Healthcare Simulation Products</span>
+        <h2>Clinical simulation systems for every level of training.</h2>
+        <p>Manikins, task trainers, and virtual patient software built to prepare clinical staff before they ever treat a real patient.</p>
+      </div>
+    </div>
+
+    <div class="admin-panel open" id="productAdminPanel">
+      <h4>Add a simulation product</h4>
+      <form id="addProductForm">
+        <div class="admin-form-grid">
+          <input type="text" id="pName" placeholder="Product name" required>
+          <input type="text" id="pTag" placeholder="Tag (e.g. Adult Manikin)">
+          <input type="password" id="pPass" placeholder="Password" required>
+          <div class="image-upload-field">
+            <label for="pImage">Product photo (optional)</label>
+            <input type="file" id="pImage" accept="image/*">
+            <div id="pImagePreviewWrap" style="display:none;">
+              <img id="pImagePreview" alt="Selected product photo preview">
+              <button type="button" id="pImageRemove" title="Remove photo">✕</button>
+            </div>
+          </div>
+          <textarea id="pDesc" placeholder="Short description" required></textarea>
+        </div>
+        <p id="pPassError" style="display:none;color:var(--terracotta-dark);font-size:0.85rem;margin-bottom:12px;">Incorrect password. Please try again.</p>
+        <div style="display:flex;gap:10px;">
+          <button type="submit" class="btn btn-primary btn-sm">Add Product</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="cancelAddProduct">Clear Form</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="grid-3" id="productsGrid">
+      <!-- default healthcare simulation products -->
+      <div class="card" data-default="true">
+        <span class="card-remove" title="Remove product">✕</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Adult Patient Manikins</h3>
+        <p>High-fidelity full-body manikins with programmable vitals for adult clinical scenario training.</p>
+        <span class="tag">Full-Body Simulator</span>
+      </div>
+      <div class="card" data-default="true">
+        <span class="card-remove" title="Remove product">✕</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 21v-6a3 3 0 013-3v0a3 3 0 013 3v6"/><circle cx="12" cy="6" r="4"/></svg></div>
+        <h3>Pediatric &amp; Infant Simulators</h3>
+        <p>Age-specific manikins for pediatric, infant, and neonatal resuscitation and care training.</p>
+        <span class="tag">Pediatric Care</span>
+      </div>
+      <div class="card" data-default="true">
+        <span class="card-remove" title="Remove product">✕</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21c-4-3-8-6.5-8-11a8 8 0 0116 0c0 4.5-4 8-8 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Maternal &amp; Birthing Simulators</h3>
+        <p>Obstetric manikins for labor, delivery, and postpartum emergency scenario training.</p>
+        <span class="tag">Obstetrics</span>
+      </div>
+      <div class="card" data-default="true">
+        <span class="card-remove" title="Remove product">✕</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></div>
+        <h3>Task Trainers</h3>
+        <p>Focused-skill trainers for IV insertion, airway management, suturing, catheterization and more.</p>
+        <span class="tag">Skills Training</span>
+      </div>
+      <div class="card" data-default="true">
+        <span class="card-remove" title="Remove product">✕</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
+        <h3>Virtual &amp; AR Patient Software</h3>
+        <p>Screen-based and immersive virtual patient scenarios for history-taking, diagnosis, and decision-making practice.</p>
+        <span class="tag">Virtual Patients</span>
+      </div>
+      <div class="card" data-default="true">
+        <span class="card-remove" title="Remove product">✕</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg></div>
+        <h3>Simulation Center Control Software</h3>
+        <p>Instructor-station software to run, record, and debrief multi-manikin simulation sessions in real time.</p>
+        <span class="tag">Instructor Tools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="consultancy" id="consultancy">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Facility Consultancy</span>
+      <h2>End-to-end guidance from first concept to accredited operation.</h2>
+      <p>We advise healthcare institutions through every stage of building and running a simulation program.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card reveal">
+        <span class="step-tag">01</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
+        <h3>Simulation Concept Design</h3>
+        <p>Defining the training goals and simulation strategy before any equipment or space is chosen.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">02</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-8h6v8"/></svg></div>
+        <h3>Facilities Design</h3>
+        <p>Space planning and layout for simulation bays, control rooms, and debrief areas.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">03</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Project Management</h3>
+        <p>Coordinating timelines, vendors, and stakeholders from planning through opening day.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">04</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+        <h3>Simulation Inventory</h3>
+        <p>Cataloguing and planning the manikins, trainers, and consumables a program will need.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">05</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+        <h3>Technical Specification</h3>
+        <p>Detailed specs for power, networking, AV, and equipment matched to the facility design.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">06</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 20a8 8 0 100-16 8 8 0 000 16zM12 8v8M8 12h8"/></svg></div>
+        <h3>Technical Evolutions</h3>
+        <p>Planning upgrade paths as simulation technology and training needs evolve over time.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">07</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M13 2L3 14h8l-1 8 11-14h-9l1-6z"/></svg></div>
+        <h3>Installation &amp; Commissioning</h3>
+        <p>On-site installation, integration, and testing to bring systems fully into service.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">08</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Activation</h3>
+        <p>Bringing the facility live with a controlled first-run of real training sessions.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">09</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v12H4z"/><path d="M9 20h6M12 16v4"/></svg></div>
+        <h3>User Training</h3>
+        <p>Hands-on training for faculty and technicians on operating and maintaining the equipment.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">10</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a5 5 0 015-5h2a5 5 0 015 5"/><path d="M15.5 14.2A4 4 0 0121 18v1"/></svg></div>
+        <h3>Team Building Support</h3>
+        <p>Helping institutions structure and grow the staffing team behind a simulation program.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">11</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Accreditation Guidance</h3>
+        <p>Preparing documentation and practices aligned to recognized simulation accreditation standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why InnovateSim</span>
+      <h2>One partner across the whole simulation lifecycle.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <strong>Full-lifecycle</strong>
+        <p>From product design to facility consultancy to accreditation guidance — no handoffs between vendors.</p>
+      </div>
+      <div class="why-item reveal">
+        <strong>Clinical expertise</strong>
+        <p>Teams with direct backgrounds in nursing, medical education, and healthcare facility operations.</p>
+      </div>
+      <div class="why-item reveal">
+        <strong>Independent advice</strong>
+        <p>Facility consultancy that specifies what the training goal needs, not what one vendor happens to sell.</p>
+      </div>
+      <div class="why-item reveal">
+        <strong>Global delivery</strong>
+        <p>Project teams experienced in delivering simulation facilities across varied regulatory environments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.9rem,3vw,2.6rem);">Tell us what you're trying to train for.</h2>
+      <p style="color:var(--ink-soft);margin-top:14px;margin-bottom:36px;">Whether it's a single simulator or a full facility build, our team will scope the right approach.</p>
+
+      <div class="contact-info-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg></div>
+        <div><h4>Email</h4><p>alidawoodian@yahoo.com<br>bahatomah@yahoo.com</p></div>
+      </div>
+      <div class="contact-info-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.7a16 16 0 006.2 6.2l1.2-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
+        <div><h4>Phone</h4><p>+1 (647) 949-5728</p></div>
+      </div>
+      <div class="contact-info-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 2a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5h10z"/><path d="M8 12a4 4 0 108 0 4 4 0 00-8 0z"/></svg></div>
+        <div><h4>WhatsApp</h4><p><a href="https://wa.me/16479495728" target="_blank" rel="noopener" style="color:var(--terracotta-dark);text-decoration:underline;">+1 (647) 949-5728</a></p></div>
+      </div>
+      <div class="contact-info-item">
+        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h4>Headquarters</h4><p>572 Laughren Cres, Milton, Ontario, L9T 0G5</p></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="chatbot-card">
+        <div class="chatbot-header">
+          <div class="chatbot-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/><circle cx="9" cy="12.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="12.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div>
+            <h4>InnovateSim Assistant</h4>
+            <span class="chatbot-status"><span class="dot"></span>Online</span>
+          </div>
+        </div>
+
+        <div class="chatbot-messages" id="chatbotMessages">
+          <div class="chat-msg bot">Hi! I'm the InnovateSim assistant. Ask me about our healthcare simulation products, facility consultancy, or how to get in touch.</div>
+        </div>
+
+        <div class="chatbot-quick-replies" id="chatbotQuickReplies">
+          <button type="button" class="quick-reply-btn" data-q="products">Products</button>
+          <button type="button" class="quick-reply-btn" data-q="consultancy">Consultancy</button>
+          <button type="button" class="quick-reply-btn" data-q="contact">Contact us</button>
+        </div>
+
+        <form id="chatbotForm" class="chatbot-input-row">
+          <input type="text" id="chatbotInput" placeholder="Type your question..." autocomplete="off">
+          <button type="submit" class="btn btn-primary btn-sm" aria-label="Send">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo-mark"></div>
+          INNOVATESIM
+        </div>
+        <p class="footer-desc">Healthcare simulation products and simulation facility consultancy for institutions that train the people who care for patients.</p>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <a href="#products">Patient Manikins</a>
+        <a href="#products">Task Trainers</a>
+        <a href="#products">Virtual Patients</a>
+        <a href="#products">Control Software</a>
+      </div>
+      <div>
+        <h5>Consultancy</h5>
+        <a href="#consultancy">Concept &amp; Facility Design</a>
+        <a href="#consultancy">Installation &amp; Activation</a>
+        <a href="#consultancy">User Training</a>
+        <a href="#consultancy">Accreditation Guidance</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#about">About</a>
+        <a href="#why">Why InnovateSim</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 InnovateSim Technologies Inc. All rights reserved.</span>
+      <span>Healthcare Simulation · Facility Consultancy</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Mobile nav toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNavPanel = document.getElementById('mobileNavPanel');
+  if(mobileMenuBtn && mobileNavPanel){
+    mobileMenuBtn.addEventListener('click', ()=>{
+      const isOpen = mobileNavPanel.classList.toggle('open');
+      mobileMenuBtn.classList.toggle('open', isOpen);
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileNavPanel.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        mobileNavPanel.classList.remove('open');
+        mobileMenuBtn.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // --- Add / remove healthcare simulation products ---
+  const PRODUCT_PASSWORD = "Sim@123"; // change this to your own password
+  const cancelAddProduct = document.getElementById('cancelAddProduct');
+  const productAdminPanel = document.getElementById('productAdminPanel');
+  const addProductForm = document.getElementById('addProductForm');
+  const productsGrid = document.getElementById('productsGrid');
+
+  cancelAddProduct.addEventListener('click', ()=>{
+    document.getElementById('pPassError').style.display = 'none';
+    addProductForm.reset();
+    document.getElementById('pImagePreviewWrap').style.display = 'none';
+  });
+
+  function confirmRemovalPassword(){
+    const entered = window.prompt('Enter the password to remove this product:');
+    if(entered === null) return false; // user cancelled
+    if(entered !== PRODUCT_PASSWORD){
+      alert('Incorrect password. Product was not removed.');
+      return false;
+    }
+    return true;
+  }
+
+  function makeProductCard(name, tag, desc, imageDataUrl){
+    const card = document.createElement('div');
+    card.className = 'card';
+    const photoHtml = imageDataUrl
+      ? `<img class="card-photo" src="${imageDataUrl}" alt="${name}">`
+      : `<div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>`;
+    card.innerHTML = `
+      <span class="card-remove" title="Remove product">✕</span>
+      ${photoHtml}
+      <h3></h3>
+      <p></p>
+      <span class="tag"></span>
+    `;
+    card.querySelector('h3').textContent = name;
+    card.querySelector('p').textContent = desc;
+    card.querySelector('.tag').textContent = tag;
+    if(imageDataUrl) card.dataset.image = imageDataUrl;
+    card.querySelector('.card-remove').addEventListener('click', ()=>{
+      if(!confirmRemovalPassword()) return;
+      card.remove();
+      saveCustomProducts();
+    });
+    return card;
+  }
+
+  function saveCustomProducts(){
+    try{
+      const customCards = [...productsGrid.querySelectorAll('.card:not([data-default])')];
+      const data = customCards.map(c=>({
+        name: c.querySelector('h3').textContent,
+        tag: c.querySelector('.tag').textContent,
+        desc: c.querySelector('p').textContent,
+        image: c.dataset.image || null
+      }));
+      localStorage.setItem('innovatesim_custom_products', JSON.stringify(data));
+    }catch(err){
+      console.warn('Could not save products to local storage:', err);
+    }
+  }
+
+  function loadCustomProducts(){
+    try{
+      const raw = localStorage.getItem('innovatesim_custom_products');
+      if(!raw) return;
+      const data = JSON.parse(raw);
+      data.forEach(p=> productsGrid.appendChild(makeProductCard(p.name, p.tag, p.desc, p.image)));
+    }catch(err){
+      console.warn('Could not load saved products from local storage:', err);
+    }
+  }
+
+  // Photo picker preview
+  const pImage = document.getElementById('pImage');
+  const pImagePreviewWrap = document.getElementById('pImagePreviewWrap');
+  const pImagePreview = document.getElementById('pImagePreview');
+  const pImageRemove = document.getElementById('pImageRemove');
+  let selectedImageDataUrl = null;
+
+  pImage.addEventListener('change', ()=>{
+    const file = pImage.files && pImage.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev)=>{
+      selectedImageDataUrl = ev.target.result;
+      pImagePreview.src = selectedImageDataUrl;
+      pImagePreviewWrap.style.display = 'flex';
+    };
+    reader.readAsDataURL(file);
+  });
+
+  pImageRemove.addEventListener('click', ()=>{
+    selectedImageDataUrl = null;
+    pImage.value = '';
+    pImagePreviewWrap.style.display = 'none';
+  });
+
+  addProductForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const name = document.getElementById('pName').value.trim();
+    const tag = document.getElementById('pTag').value.trim();
+    const desc = document.getElementById('pDesc').value.trim();
+    const pass = document.getElementById('pPass').value.trim();
+    const passError = document.getElementById('pPassError');
+
+    if(pass !== PRODUCT_PASSWORD){
+      passError.style.display = 'block';
+      document.getElementById('pPass').value = '';
+      document.getElementById('pPass').focus();
+      return;
+    }
+    passError.style.display = 'none';
+
+    if(!name || !desc) return;
+    const card = makeProductCard(name, tag || 'Simulation Product', desc, selectedImageDataUrl);
+    productsGrid.appendChild(card);
+    saveCustomProducts();
+    addProductForm.reset();
+    selectedImageDataUrl = null;
+    pImagePreviewWrap.style.display = 'none';
+  });
+
+  // Removal for the default (built-in) product cards
+  document.querySelectorAll('#productsGrid .card[data-default] .card-remove').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(!confirmRemovalPassword()) return;
+      btn.closest('.card').remove();
+    });
+  });
+
+  loadCustomProducts();
+
+  // --- Chatbot widget ---
+  const chatbotMessages = document.getElementById('chatbotMessages');
+  const chatbotForm = document.getElementById('chatbotForm');
+  const chatbotInput = document.getElementById('chatbotInput');
+  const chatbotQuickReplies = document.getElementById('chatbotQuickReplies');
+
+  const CONTACT_EMAILS = 'alidawoodian@yahoo.com, bahatomah@yahoo.com';
+  const MAILTO_LINK = 'mailto:alidawoodian@yahoo.com,bahatomah@yahoo.com?subject=' + encodeURIComponent('Website inquiry');
+
+  function addChatMessage(text, sender, isHtml){
+    const msg = document.createElement('div');
+    msg.className = 'chat-msg ' + sender;
+    if(isHtml){ msg.innerHTML = text; } else { msg.textContent = text; }
+    chatbotMessages.appendChild(msg);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  function botReplyFor(rawText){
+    const text = rawText.toLowerCase();
+
+    if(text.includes('product')){
+      return 'We supply healthcare simulation products — patient manikins (adult, pediatric, infant, maternal), task trainers, virtual & AR patient software, and simulation center control software. Scroll up to the Products section for the full list, or ask me about a specific one.';
+    }
+    if(text.includes('consult')){
+      return 'Our facility consultancy covers concept design, facility design, project management, simulation inventory, technical specification, installation & commissioning, activation, user training, team building support, and accreditation guidance — basically end-to-end support for building a simulation center.';
+    }
+    if(text.includes('price') || text.includes('cost') || text.includes('quote')){
+      return 'Pricing depends on the scope of products or consultancy services you need. The best next step is to email our team at ' + CONTACT_EMAILS + ' with a bit about your project, and we\'ll put together a quote.';
+    }
+    if(text.includes('accredit')){
+      return 'We help institutions prepare documentation and practices aligned with recognized simulation accreditation standards as part of our consultancy services.';
+    }
+    if(text.includes('train')){
+      return 'We provide hands-on user training for faculty and technicians as part of facility setup, plus ongoing team building support so your simulation program is staffed and running smoothly.';
+    }
+    if(text.includes('whatsapp')){
+      return 'You can reach us on WhatsApp — see the WhatsApp entry in the Contact section on this page.';
+    }
+    if(text.includes('contact') || text.includes('email') || text.includes('reach') || text.includes('call') || text.includes('phone')){
+      return 'You can reach our team directly at <a href="' + MAILTO_LINK + '">' + CONTACT_EMAILS + '</a>, or via the WhatsApp link in the Contact section.';
+    }
+    if(text.includes('hello') || text.includes('hi') || text.includes('hey')){
+      return 'Hello! Ask me about our healthcare simulation products, facility consultancy services, or how to get in touch with our team.';
+    }
+    if(text.includes('thank')){
+      return 'You\'re welcome! Let us know if there\'s anything else you\'d like to know.';
+    }
+    return 'I can help with questions about our healthcare simulation products, facility consultancy services, or how to contact our team. You can also email us directly at <a href="' + MAILTO_LINK + '">' + CONTACT_EMAILS + '</a>.';
+  }
+
+  function handleUserMessage(text){
+    if(!text) return;
+    addChatMessage(text, 'user');
+    setTimeout(()=>{
+      addChatMessage(botReplyFor(text), 'bot', true);
+    }, 350);
+  }
+
+  if(chatbotForm){
+    chatbotForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const text = chatbotInput.value.trim();
+      if(!text) return;
+      handleUserMessage(text);
+      chatbotInput.value = '';
+    });
+  }
+
+  if(chatbotQuickReplies){
+    chatbotQuickReplies.querySelectorAll('.quick-reply-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const map = {
+          products: 'Tell me about your products',
+          consultancy: 'Tell me about your consultancy services',
+          contact: 'How can I contact you?'
+        };
+        handleUserMessage(map[btn.dataset.q] || btn.textContent);
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
