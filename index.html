@@ -302,48 +302,6 @@
   /* Products section slightly tinted */
   .products{position:relative;}
 
-  /* Add-product controls */
-  .admin-bar{
-    display:flex;align-items:center;gap:12px;
-  }
-
-  .admin-panel{
-    display:block;
-    background:var(--white);
-    border:1px dashed var(--terracotta);
-    border-radius:var(--radius);
-    padding:28px;
-    margin-bottom:40px;
-  }
-  .admin-panel h4{font-size:1rem;margin-bottom:16px;}
-  .admin-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-  @media (max-width:600px){.admin-form-grid{grid-template-columns:1fr;}}
-  .admin-form-grid textarea{grid-column:1/-1;}
-  .admin-panel input, .admin-panel textarea{
-    width:100%;padding:11px 14px;border-radius:9px;border:1px solid var(--line);
-    background:var(--cream);font-family:'Inter',sans-serif;font-size:0.9rem;
-  }
-  .admin-panel input:focus, .admin-panel textarea:focus{outline:none;border-color:var(--terracotta);}
-  .admin-panel textarea{min-height:70px;resize:vertical;}
-
-  .image-upload-field{display:flex;flex-direction:column;gap:6px;}
-  .image-upload-field label{font-size:0.78rem;color:var(--ink-soft);font-weight:600;}
-  .image-upload-field input[type="file"]{
-    padding:9px 10px;font-size:0.85rem;background:var(--cream);
-  }
-  #pImagePreviewWrap{
-    display:flex;align-items:center;gap:10px;margin-top:4px;
-  }
-  #pImagePreview{
-    width:52px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--line);
-  }
-  #pImageRemove{
-    width:24px;height:24px;border-radius:50%;border:1px solid var(--line);
-    background:var(--white);cursor:pointer;font-size:0.8rem;color:var(--ink-soft);
-    display:flex;align-items:center;justify-content:center;line-height:1;
-  }
-  #pImageRemove:hover{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
-
   .card-photo{
     width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:20px;
   }
@@ -612,31 +570,6 @@
         <h2>Clinical simulation systems for every level of training.</h2>
         <p>Manikins, task trainers, and virtual patient software built to prepare clinical staff before they ever treat a real patient.</p>
       </div>
-    </div>
-
-    <div class="admin-panel open" id="productAdminPanel">
-      <h4>Add a simulation product</h4>
-      <form id="addProductForm">
-        <div class="admin-form-grid">
-          <input type="text" id="pName" placeholder="Product name" required>
-          <input type="text" id="pTag" placeholder="Tag (e.g. Adult Manikin)">
-          <input type="password" id="pPass" placeholder="Password" required>
-          <div class="image-upload-field">
-            <label for="pImage">Product photo (optional)</label>
-            <input type="file" id="pImage" accept="image/*">
-            <div id="pImagePreviewWrap" style="display:none;">
-              <img id="pImagePreview" alt="Selected product photo preview">
-              <button type="button" id="pImageRemove" title="Remove photo">✕</button>
-            </div>
-          </div>
-          <textarea id="pDesc" placeholder="Short description" required></textarea>
-        </div>
-        <p id="pPassError" style="display:none;color:var(--terracotta-dark);font-size:0.85rem;margin-bottom:12px;">Incorrect password. Please try again.</p>
-        <div style="display:flex;gap:10px;">
-          <button type="submit" class="btn btn-primary btn-sm">Add Product</button>
-          <button type="button" class="btn btn-ghost btn-sm" id="cancelAddProduct">Clear Form</button>
-        </div>
-      </form>
     </div>
 
     <div class="grid-3" id="productsGrid">
@@ -918,16 +851,7 @@
 
   // --- Add / remove healthcare simulation products ---
   const PRODUCT_PASSWORD = "Sim@123"; // change this to your own password
-  const cancelAddProduct = document.getElementById('cancelAddProduct');
-  const productAdminPanel = document.getElementById('productAdminPanel');
-  const addProductForm = document.getElementById('addProductForm');
   const productsGrid = document.getElementById('productsGrid');
-
-  cancelAddProduct.addEventListener('click', ()=>{
-    document.getElementById('pPassError').style.display = 'none';
-    addProductForm.reset();
-    document.getElementById('pImagePreviewWrap').style.display = 'none';
-  });
 
   function confirmRemovalPassword(){
     const entered = window.prompt('Enter the password to remove this product:');
@@ -989,56 +913,6 @@
       console.warn('Could not load saved products from local storage:', err);
     }
   }
-
-  // Photo picker preview
-  const pImage = document.getElementById('pImage');
-  const pImagePreviewWrap = document.getElementById('pImagePreviewWrap');
-  const pImagePreview = document.getElementById('pImagePreview');
-  const pImageRemove = document.getElementById('pImageRemove');
-  let selectedImageDataUrl = null;
-
-  pImage.addEventListener('change', ()=>{
-    const file = pImage.files && pImage.files[0];
-    if(!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev)=>{
-      selectedImageDataUrl = ev.target.result;
-      pImagePreview.src = selectedImageDataUrl;
-      pImagePreviewWrap.style.display = 'flex';
-    };
-    reader.readAsDataURL(file);
-  });
-
-  pImageRemove.addEventListener('click', ()=>{
-    selectedImageDataUrl = null;
-    pImage.value = '';
-    pImagePreviewWrap.style.display = 'none';
-  });
-
-  addProductForm.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const name = document.getElementById('pName').value.trim();
-    const tag = document.getElementById('pTag').value.trim();
-    const desc = document.getElementById('pDesc').value.trim();
-    const pass = document.getElementById('pPass').value.trim();
-    const passError = document.getElementById('pPassError');
-
-    if(pass !== PRODUCT_PASSWORD){
-      passError.style.display = 'block';
-      document.getElementById('pPass').value = '';
-      document.getElementById('pPass').focus();
-      return;
-    }
-    passError.style.display = 'none';
-
-    if(!name || !desc) return;
-    const card = makeProductCard(name, tag || 'Simulation Product', desc, selectedImageDataUrl);
-    productsGrid.appendChild(card);
-    saveCustomProducts();
-    addProductForm.reset();
-    selectedImageDataUrl = null;
-    pImagePreviewWrap.style.display = 'none';
-  });
 
   // Removal for the default (built-in) product cards
   document.querySelectorAll('#productsGrid .card[data-default] .card-remove').forEach(btn=>{
