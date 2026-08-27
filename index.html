@@ -8,7 +8,7 @@
 <meta property="og:title" content="InnovateSim Technologies Inc.">
 <meta property="og:description" content="Healthcare simulation products and simulation facility consultancy.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23C96A43'/%3E%3Cstop offset='1' stop-color='%23233B4D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-dasharray='140' stroke-dashoffset='35'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23C96A43%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23233B4D%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%27100%27%20height%3D%27100%27%20rx%3D%2724%27%20fill%3D%27url%28%23g%29%27/%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27white%27%20stroke-width%3D%276%27%20stroke-linecap%3D%27round%27%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2750%27%20r%3D%2727%27/%3E%3Cpath%20d%3D%27M50%2014v9M50%2077v9M86%2050h-9M23%2050h-9M74.8%2025.2l-6.4%206.4M31.6%2068.4l-6.4%206.4M74.8%2074.8l-6.4-6.4M31.6%2031.6l-6.4-6.4%27/%3E%3C/g%3E%3Cpath%20d%3D%27M50%2037v26M37%2050h26%27%20stroke%3D%27white%27%20stroke-width%3D%278%27%20stroke-linecap%3D%27round%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -105,14 +105,7 @@
     font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;
   }
   .logo-mark{
-    width:34px;height:34px;border-radius:9px;
-    background:linear-gradient(135deg,var(--terracotta),var(--navy));
-    position:relative;flex-shrink:0;
-  }
-  .logo-mark::after{
-    content:'';position:absolute;inset:9px;
-    border:2px solid var(--white);border-radius:50%;
-    border-right-color:transparent;border-bottom-color:transparent;
+    width:34px;height:34px;flex-shrink:0;display:block;
   }
   .logo small{
     display:block;font-family:'JetBrains Mono',monospace;
@@ -208,14 +201,18 @@
   .instrument-head .dot{width:8px;height:8px;border-radius:50%;background:#7CD68A;display:inline-block;margin-right:6px;box-shadow:0 0 8px #7CD68A;animation:blink 2.4s infinite;}
   @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.35;}}
 
-  .dial-row{display:flex;gap:18px;margin-bottom:20px;}
-  .dial{
-    flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
-    border-radius:12px;padding:16px;text-align:center;
+  .badge-row{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+  .badge{
+    flex:1;min-width:64px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+    border-radius:12px;padding:14px 8px;text-align:center;
+    transition:background .2s ease, transform .2s ease;
   }
-  .dial svg{width:64px;height:64px;}
-  .dial-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.55);margin-top:6px;letter-spacing:.06em;text-transform:uppercase;}
-  .dial-value{font-family:'Fraunces',serif;font-size:1.1rem;margin-top:2px;}
+  .badge:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px);}
+  .badge svg{width:30px;height:30px;margin:0 auto;display:block;}
+  .badge-label{
+    display:block;font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:rgba(255,255,255,0.65);
+    margin-top:8px;letter-spacing:.05em;text-transform:uppercase;
+  }
 
   .wave{
     height:70px;border-radius:12px;background:rgba(255,255,255,0.06);
@@ -287,17 +284,6 @@
     display:inline-block;margin-top:16px;font-family:'JetBrains Mono',monospace;
     font-size:0.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-2);
   }
-  .card .card-remove{
-    position:absolute;top:16px;right:16px;
-    width:26px;height:26px;border-radius:50%;
-    background:var(--cream-2);border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;
-    cursor:pointer;font-size:0.85rem;color:var(--ink-soft);
-    line-height:1;
-  }
-  .card .card-remove:hover{background:var(--terracotta);color:var(--white);border-color:var(--terracotta);}
-  .card{padding-top:30px;}
-  .card .card-remove{display:flex;}
 
   /* Products section slightly tinted */
   .products{position:relative;}
@@ -305,6 +291,11 @@
   .card-photo{
     width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:20px;
   }
+
+  .card-illustration{
+    width:100%;height:150px;border-radius:10px;margin-bottom:20px;overflow:hidden;
+  }
+  .card-illustration svg{width:100%;height:100%;display:block;}
 
   /* Consultancy - alternate bg */
   .consultancy{background:var(--navy);color:var(--white);}
@@ -463,7 +454,20 @@
 <header>
   <div class="nav">
     <div class="logo">
-      <div class="logo-mark"></div>
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="InnovateSim logo">
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" style="stop-color:var(--terracotta)"/>
+            <stop offset="1" style="stop-color:var(--navy)"/>
+          </linearGradient>
+        </defs>
+        <rect width="100" height="100" rx="24" fill="url(#logoGrad)"/>
+        <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round">
+          <circle cx="50" cy="50" r="27"/>
+          <path d="M50 14v9M50 77v9M86 50h-9M23 50h-9M74.8 25.2l-6.4 6.4M31.6 68.4l-6.4 6.4M74.8 74.8l-6.4-6.4M31.6 31.6l-6.4-6.4"/>
+        </g>
+        <path d="M50 37v26M37 50h26" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+      </svg>
       <div>
         INNOVATESIM
         <small>Technologies Inc.</small>
@@ -498,36 +502,36 @@
     <div>
       <span class="eyebrow">Healthcare Simulation &amp; Facility Consultancy</span>
       <h1>Clinical training environments where <em>competence comes before the real patient.</em></h1>
-      <p class="lead">InnovateSim Technologies designs healthcare simulation products and advises hospitals, universities, and training centers on building the facilities that run them.</p>
+      <p class="lead">InnovateSim Technologies provides healthcare simulation products and advises hospitals, universities, and training centers on building the facilities that run them.</p>
       <div class="hero-ctas">
         <a href="#products" class="btn btn-primary">Explore Products</a>
         <a href="#consultancy" class="btn btn-ghost">Consultancy Services</a>
       </div>
       <div class="hero-stats">
-        <div><strong>15+</strong><span>Years in simulation</span></div>
-        <div><strong>120+</strong><span>Facilities delivered</span></div>
-        <div><strong>30+</strong><span>Countries served</span></div>
+        <div><strong>14+</strong><span>Years in simulation</span></div>
+        <div><strong>25+</strong><span>Facilities delivered</span></div>
+        <div><strong>6+</strong><span>Countries served</span></div>
       </div>
     </div>
 
     <div class="instrument reveal">
       <div class="instrument-head"><span><span class="dot"></span>System Status: Live</span><span>SIM-CTRL/01</span></div>
-      <div class="dial-row">
-        <div class="dial">
-          <svg viewBox="0 0 64 64" fill="none">
-            <circle cx="32" cy="32" r="26" stroke="rgba(255,255,255,0.18)" stroke-width="4"/>
-            <circle cx="32" cy="32" r="26" stroke="#C96A43" stroke-width="4" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="40"/>
-          </svg>
-          <div class="dial-value">87%</div>
-          <div class="dial-label">Fidelity</div>
+      <div class="badge-row">
+        <div class="badge">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M4 20h7l3-10 6 20 4-14 3 4h9" stroke="#C96A43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge-label">Vitals</span>
         </div>
-        <div class="dial">
-          <svg viewBox="0 0 64 64" fill="none">
-            <circle cx="32" cy="32" r="26" stroke="rgba(255,255,255,0.18)" stroke-width="4"/>
-            <circle cx="32" cy="32" r="26" stroke="#7CD68A" stroke-width="4" stroke-linecap="round" stroke-dasharray="163" stroke-dashoffset="90"/>
-          </svg>
-          <div class="dial-value">62%</div>
-          <div class="dial-label">Load</div>
+        <div class="badge">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M12 6v10a8 8 0 0016 0V6" stroke="#9FD3E0" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="6" r="3" stroke="#9FD3E0" stroke-width="3"/><circle cx="28" cy="6" r="3" stroke="#9FD3E0" stroke-width="3"/><circle cx="28" cy="26" r="4" stroke="#9FD3E0" stroke-width="3"/></svg>
+          <span class="badge-label">Assessment</span>
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#7CD68A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(20 20) rotate(-40) translate(-20 -20)"><rect x="4" y="15" width="22" height="10" rx="2"/><path d="M26 15v10M30 15v10M34 15v10"/><path d="M26 20h8"/></g></svg>
+          <span class="badge-label">Task Skills</span>
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 4l13 5v9c0 9-6 15-13 18-7-3-13-9-13-18V9z" stroke="#F0B79A" stroke-width="3" stroke-linejoin="round"/><path d="M14 20l4 4 8-8" stroke="#F0B79A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge-label">Safety</span>
         </div>
       </div>
       <div class="wave">
@@ -575,46 +579,116 @@
     <div class="grid-3" id="productsGrid">
       <!-- default healthcare simulation products -->
       <div class="card" data-default="true">
-        <span class="card-remove" title="Remove product">✕</span>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="card-illustration illus-adult">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--navy)"/>
+            <circle cx="140" cy="75" r="34" fill="none" stroke="var(--white)" stroke-width="4" opacity="0.95"/>
+            <path d="M110 75h16l6-16 10 30 8-20 6 6h24" fill="none" stroke="var(--white)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+          </svg>
+        </div>
         <h3>Adult Patient Manikins</h3>
         <p>High-fidelity full-body manikins with programmable vitals for adult clinical scenario training.</p>
         <span class="tag">Full-Body Simulator</span>
       </div>
       <div class="card" data-default="true">
-        <span class="card-remove" title="Remove product">✕</span>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 21v-6a3 3 0 013-3v0a3 3 0 013 3v6"/><circle cx="12" cy="6" r="4"/></svg></div>
+        <div class="card-illustration illus-pediatric">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--terracotta-dark)"/>
+            <path d="M140 45c-16 0-27 12-27 27 0 12 7 20 14 25v10a4 4 0 004 4h18a4 4 0 004-4v-10c7-5 14-13 14-25 0-15-11-27-27-27z" fill="none" stroke="var(--white)" stroke-width="4" stroke-linejoin="round" opacity="0.95"/>
+            <circle cx="131" cy="70" r="3" fill="var(--white)"/>
+            <circle cx="149" cy="70" r="3" fill="var(--white)"/>
+          </svg>
+        </div>
         <h3>Pediatric &amp; Infant Simulators</h3>
         <p>Age-specific manikins for pediatric, infant, and neonatal resuscitation and care training.</p>
         <span class="tag">Pediatric Care</span>
       </div>
       <div class="card" data-default="true">
-        <span class="card-remove" title="Remove product">✕</span>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21c-4-3-8-6.5-8-11a8 8 0 0116 0c0 4.5-4 8-8 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="card-illustration illus-obstetric">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--navy-2)"/>
+            <path d="M140 40c-20 0-33 17-33 38 0 18 10 30 22 36v10a4 4 0 004 4h14a4 4 0 004-4v-10c12-6 22-18 22-36 0-21-13-38-33-38z" fill="none" stroke="var(--white)" stroke-width="4" stroke-linejoin="round" opacity="0.95"/>
+            <path d="M124 68c4-6 10-6 16 0 6-6 12-6 16 0-4 8-16 16-16 16s-12-8-16-16z" fill="var(--white)" opacity="0.9"/>
+          </svg>
+        </div>
         <h3>Maternal &amp; Birthing Simulators</h3>
         <p>Obstetric manikins for labor, delivery, and postpartum emergency scenario training.</p>
         <span class="tag">Obstetrics</span>
       </div>
       <div class="card" data-default="true">
-        <span class="card-remove" title="Remove product">✕</span>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></div>
+        <div class="card-illustration illus-task">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--terracotta)"/>
+            <g transform="translate(140 75) rotate(-40)" stroke="var(--white)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+              <rect x="-42" y="-9" width="60" height="18" rx="3"/>
+              <path d="M18 -9v18M28 -9v18M38 -9v18"/>
+              <path d="M18 0h30"/>
+              <path d="M48 0h14"/>
+              <path d="M-42 -9v18"/>
+            </g>
+          </svg>
+        </div>
         <h3>Task Trainers</h3>
         <p>Focused-skill trainers for IV insertion, airway management, suturing, catheterization and more.</p>
         <span class="tag">Skills Training</span>
       </div>
       <div class="card" data-default="true">
-        <span class="card-remove" title="Remove product">✕</span>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
+        <div class="card-illustration illus-vr">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--navy)"/>
+            <path d="M95 55h90a14 14 0 0114 14v12a14 14 0 01-14 14h-14l-10 12-10-12h-46a14 14 0 01-14-14V69a14 14 0 0114-14z" fill="none" stroke="var(--white)" stroke-width="4" stroke-linejoin="round" opacity="0.95"/>
+            <circle cx="122" cy="76" r="8" fill="none" stroke="var(--white)" stroke-width="4" opacity="0.95"/>
+            <circle cx="158" cy="76" r="8" fill="none" stroke="var(--white)" stroke-width="4" opacity="0.95"/>
+          </svg>
+        </div>
         <h3>Virtual &amp; AR Patient Software</h3>
         <p>Screen-based and immersive virtual patient scenarios for history-taking, diagnosis, and decision-making practice.</p>
         <span class="tag">Virtual Patients</span>
       </div>
       <div class="card" data-default="true">
-        <span class="card-remove" title="Remove product">✕</span>
-        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg></div>
+        <div class="card-illustration illus-control">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--navy-2)"/>
+            <rect x="95" y="48" width="90" height="60" rx="6" fill="none" stroke="var(--white)" stroke-width="4" opacity="0.95"/>
+            <path d="M108 68h30M108 80h44M108 92h24" stroke="var(--white)" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+            <circle cx="163" cy="92" r="4" fill="#7CD68A"/>
+          </svg>
+        </div>
         <h3>Simulation Center Control Software</h3>
         <p>Instructor-station software to run, record, and debrief multi-manikin simulation sessions in real time.</p>
         <span class="tag">Instructor Tools</span>
+      </div>
+      <div class="card" data-default="true">
+        <div class="card-illustration illus-consumables">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--terracotta-dark)"/>
+            <g stroke="var(--white)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+              <path d="M100 100l40-40 12 12-40 40z"/>
+              <path d="M140 60l14-14a6 6 0 018 8l-14 14"/>
+              <path d="M96 104l-8 14 14-8z" fill="var(--white)"/>
+              <path d="M170 55h30M185 40v30"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Medical Consumables, Supplies &amp; Surgical Instruments</h3>
+        <p>Training-grade consumables, disposable supplies, and surgical instruments to support realistic hands-on practice.</p>
+        <span class="tag">Training Supplies</span>
+      </div>
+      <div class="card" data-default="true">
+        <div class="card-illustration illus-medications">
+          <svg viewBox="0 0 280 150">
+            <rect width="280" height="150" fill="var(--navy)"/>
+            <g stroke="var(--white)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+              <path d="M124 50h32v18l14 14v40a8 8 0 01-8 8h-44a8 8 0 01-8-8v-40l14-14z"/>
+              <path d="M124 50h32"/>
+              <path d="M112 106h56"/>
+            </g>
+            <circle cx="140" cy="88" r="3" fill="#7CD68A"/>
+          </svg>
+        </div>
+        <h3>Simulation Medications for Training</h3>
+        <p>Realistic, non-active simulation medications and labeled look-alike drugs for safe medication administration practice.</p>
+        <span class="tag">Simulation Pharma</span>
       </div>
     </div>
   </div>
@@ -786,7 +860,20 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <div class="logo-mark"></div>
+          <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="InnovateSim logo">
+            <defs>
+              <linearGradient id="logoGradFooter" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" style="stop-color:var(--terracotta)"/>
+                <stop offset="1" style="stop-color:var(--navy-2)"/>
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" rx="24" fill="url(#logoGradFooter)"/>
+            <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round">
+              <circle cx="50" cy="50" r="27"/>
+              <path d="M50 14v9M50 77v9M86 50h-9M23 50h-9M74.8 25.2l-6.4 6.4M31.6 68.4l-6.4 6.4M74.8 74.8l-6.4-6.4M31.6 31.6l-6.4-6.4"/>
+            </g>
+            <path d="M50 37v26M37 50h26" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+          </svg>
           INNOVATESIM
         </div>
         <p class="footer-desc">Healthcare simulation products and simulation facility consultancy for institutions that train the people who care for patients.</p>
@@ -849,28 +936,22 @@
     });
   }
 
-  // --- Add / remove healthcare simulation products ---
-  const PRODUCT_PASSWORD = "Sim@123"; // change this to your own password
+  // --- Healthcare simulation products, managed via Google Sheets ---
+  // To connect: create a Google Sheet with header row:  Name | Tag | Description | ImageURL
+  // one product per row below the header. Share it as "Anyone with the link — Viewer".
+  // Then paste the Sheet ID (the long code in its URL between /d/ and /edit) below.
+  const GOOGLE_SHEET_ID = ""; // <-- paste your Google Sheet ID here
+  const GOOGLE_SHEET_NAME = "Sheet1"; // <-- change if your tab is named differently
+
   const productsGrid = document.getElementById('productsGrid');
 
-  function confirmRemovalPassword(){
-    const entered = window.prompt('Enter the password to remove this product:');
-    if(entered === null) return false; // user cancelled
-    if(entered !== PRODUCT_PASSWORD){
-      alert('Incorrect password. Product was not removed.');
-      return false;
-    }
-    return true;
-  }
-
-  function makeProductCard(name, tag, desc, imageDataUrl){
+  function makeProductCard(name, tag, desc, imageUrl){
     const card = document.createElement('div');
     card.className = 'card';
-    const photoHtml = imageDataUrl
-      ? `<img class="card-photo" src="${imageDataUrl}" alt="${name}">`
+    const photoHtml = imageUrl
+      ? `<img class="card-photo" src="${imageUrl}" alt="${name}">`
       : `<div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>`;
     card.innerHTML = `
-      <span class="card-remove" title="Remove product">✕</span>
       ${photoHtml}
       <h3></h3>
       <p></p>
@@ -879,50 +960,42 @@
     card.querySelector('h3').textContent = name;
     card.querySelector('p').textContent = desc;
     card.querySelector('.tag').textContent = tag;
-    if(imageDataUrl) card.dataset.image = imageDataUrl;
-    card.querySelector('.card-remove').addEventListener('click', ()=>{
-      if(!confirmRemovalPassword()) return;
-      card.remove();
-      saveCustomProducts();
-    });
     return card;
   }
 
-  function saveCustomProducts(){
+  async function loadProductsFromSheet(){
+    if(!GOOGLE_SHEET_ID) return; // not connected yet — the built-in default cards stay as-is
     try{
-      const customCards = [...productsGrid.querySelectorAll('.card:not([data-default])')];
-      const data = customCards.map(c=>({
-        name: c.querySelector('h3').textContent,
-        tag: c.querySelector('.tag').textContent,
-        desc: c.querySelector('p').textContent,
-        image: c.dataset.image || null
-      }));
-      localStorage.setItem('innovatesim_custom_products', JSON.stringify(data));
+      const url = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(GOOGLE_SHEET_NAME)}`;
+      const res = await fetch(url);
+      const raw = await res.text();
+      const jsonText = raw.substring(raw.indexOf('(') + 1, raw.lastIndexOf(')'));
+      const parsed = JSON.parse(jsonText);
+      const rows = (parsed.table && parsed.table.rows) || [];
+      if(rows.length === 0) return; // empty sheet — keep defaults showing
+
+      const cards = rows
+        .map(row=>{
+          const c = row.c || [];
+          const name = c[0] && c[0].v;
+          const tag = (c[1] && c[1].v) || 'Simulation Product';
+          const desc = (c[2] && c[2].v) || '';
+          const imageUrl = (c[3] && c[3].v) || null;
+          if(!name) return null;
+          return makeProductCard(name, tag, desc, imageUrl);
+        })
+        .filter(Boolean);
+
+      if(cards.length > 0){
+        productsGrid.innerHTML = '';
+        cards.forEach(card => productsGrid.appendChild(card));
+      }
     }catch(err){
-      console.warn('Could not save products to local storage:', err);
+      console.warn('Could not load products from Google Sheet — showing defaults instead:', err);
     }
   }
 
-  function loadCustomProducts(){
-    try{
-      const raw = localStorage.getItem('innovatesim_custom_products');
-      if(!raw) return;
-      const data = JSON.parse(raw);
-      data.forEach(p=> productsGrid.appendChild(makeProductCard(p.name, p.tag, p.desc, p.image)));
-    }catch(err){
-      console.warn('Could not load saved products from local storage:', err);
-    }
-  }
-
-  // Removal for the default (built-in) product cards
-  document.querySelectorAll('#productsGrid .card[data-default] .card-remove').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      if(!confirmRemovalPassword()) return;
-      btn.closest('.card').remove();
-    });
-  });
-
-  loadCustomProducts();
+  loadProductsFromSheet();
 
   // --- Chatbot widget ---
   const chatbotMessages = document.getElementById('chatbotMessages');
