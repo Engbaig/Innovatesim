@@ -201,6 +201,10 @@
   .instrument-head .dot{width:8px;height:8px;border-radius:50%;background:#7CD68A;display:inline-block;margin-right:6px;box-shadow:0 0 8px #7CD68A;animation:blink 2.4s infinite;}
   @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.35;}}
 
+  .instrument-title{text-align:center;margin-bottom:20px;}
+  .instrument-title h4{color:var(--white);font-size:1.25rem;margin-bottom:6px;}
+  .instrument-title p{color:rgba(255,255,255,0.6);font-size:0.85rem;}
+
   .badge-row{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
   .badge{
     flex:1;min-width:64px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
@@ -220,6 +224,27 @@
   }
   .wave svg{position:absolute;top:0;left:0;width:200%;height:100%;animation:scroll-wave 6s linear infinite;}
   @keyframes scroll-wave{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  .consult-row{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:20px;
+  }
+  .consult-item{text-align:center;}
+  .consult-item svg{width:26px;height:26px;margin:0 auto 8px;display:block;}
+  .consult-label{
+    display:block;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--white);
+    letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px;line-height:1.3;
+  }
+  .consult-caption{display:block;font-size:0.68rem;color:rgba(255,255,255,0.5);line-height:1.4;}
+  @media (max-width:560px){
+    .consult-row{grid-template-columns:repeat(2,1fr);gap:16px;}
+  }
+
+  .instrument-tagline{
+    display:flex;align-items:center;gap:8px;justify-content:center;
+    margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.1);
+    font-size:0.78rem;color:rgba(255,255,255,0.65);text-align:center;
+  }
+  .instrument-tagline svg{flex-shrink:0;}
 
   @media (prefers-reduced-motion: reduce){
     .wave svg{animation:none;}
@@ -516,6 +541,10 @@
 
     <div class="instrument reveal">
       <div class="instrument-head"><span><span class="dot"></span>System Status: Live</span><span>SIM-CTRL/01</span></div>
+      <div class="instrument-title">
+        <h4>Healthcare Simulation</h4>
+        <p>Concept &amp; facilities designed to inspire excellence</p>
+      </div>
       <div class="badge-row">
         <div class="badge">
           <svg viewBox="0 0 40 40" fill="none"><path d="M4 20h7l3-10 6 20 4-14 3 4h9" stroke="#C96A43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -539,6 +568,37 @@
           <path d="M0,35 Q20,5 40,35 T80,35 T120,35 T160,35 T200,35 T240,35 T280,35 T320,35 T360,35 T400,35" stroke="#9FD3E0" stroke-width="2" fill="none"/>
         </svg>
       </div>
+      <div class="consult-row">
+        <div class="consult-item">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l12 6v6c0 8-5 13-12 16-7-3-12-8-12-16v-6z" stroke="#9FD3E0" stroke-width="2.4" stroke-linejoin="round"/></svg>
+          <span class="consult-label">Concept</span>
+          <span class="consult-caption">Vision-led design for the future of simulation.</span>
+        </div>
+        <div class="consult-item">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M6 28V13l10-7 10 7v15" stroke="#F0B79A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 28v-9h8v9" stroke="#F0B79A" stroke-width="2.4" stroke-linejoin="round"/></svg>
+          <span class="consult-label">Facility Design</span>
+          <span class="consult-caption">Smart layouts that enhance learning.</span>
+        </div>
+        <div class="consult-item">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="5" stroke="#7CD68A" stroke-width="2.4"/><path d="M16 4v3M16 25v3M28 16h-3M7 16H4M23.3 8.7l-2.1 2.1M10.8 21.3l-2.1 2.1M23.3 23.3l-2.1-2.1M10.8 10.7L8.7 8.6" stroke="#7CD68A" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span class="consult-label">Equipment Consulting</span>
+          <span class="consult-caption">Right technology, right impact.</span>
+        </div>
+        <div class="consult-item">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="12" cy="11" r="4" stroke="#C96A43" stroke-width="2.4"/><circle cx="22" cy="12" r="3.2" stroke="#C96A43" stroke-width="2.4"/><path d="M4 27v-1.5A6.5 6.5 0 0110.5 19h3A6.5 6.5 0 0120 25.5V27" stroke="#C96A43" stroke-width="2.4" stroke-linecap="round"/><path d="M20.5 19.6A5.2 5.2 0 0128 24.3V25.5" stroke="#C96A43" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span class="consult-label">Operational Planning</span>
+          <span class="consult-caption">Efficient workflows, sustainable success.</span>
+        </div>
+        <div class="consult-item">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 3l10 5v7c0 7-4.5 11-10 13-5.5-2-10-6-10-13V8z" stroke="#9FD3E0" stroke-width="2.4" stroke-linejoin="round"/><path d="M11.5 16l3 3 6-6" stroke="#9FD3E0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="consult-label">Accreditation Readiness</span>
+          <span class="consult-caption">Standards-driven excellence, assured.</span>
+        </div>
+      </div>
+      <p class="instrument-tagline">
+        <svg viewBox="0 0 24 24" fill="#C96A43" width="14" height="14"><path d="M12 21s-7.5-4.6-10-9.3C.5 8.4 2.3 4.8 5.6 4.1 8 3.6 10.2 5 12 7.3 13.8 5 16 3.6 18.4 4.1c3.3.7 5.1 4.3 3.6 7.6C19.5 16.4 12 21 12 21z"/></svg>
+        Designing simulation centers that transform education, improve performance, and save lives.
+      </p>
     </div>
   </div>
 </section>
@@ -722,48 +782,54 @@
       </div>
       <div class="card reveal">
         <span class="step-tag">04</span>
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v2M12 15v2"/><path d="M9 15a3 3 0 003 1.2c1.6 0 3-1 3-2.3 0-1.2-1-1.9-3-2.4-2-.5-3-1.2-3-2.4C9 9.8 10.4 9 12 9a3 3 0 013 1.2"/></svg></div>
+        <h3>Budget Planning &amp; Financial Evolution</h3>
+        <p>Simulation project budget planning tailored to your available resources, plus financial evolution guidance to help fund equipment, facility build-out, and phased rollouts.</p>
+      </div>
+      <div class="card reveal">
+        <span class="step-tag">05</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
         <h3>Simulation Inventory</h3>
         <p>Cataloguing and planning the manikins, trainers, and consumables a program will need.</p>
       </div>
       <div class="card reveal">
-        <span class="step-tag">05</span>
+        <span class="step-tag">06</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
         <h3>Technical Specification</h3>
         <p>Detailed specs for power, networking, AV, and equipment matched to the facility design.</p>
       </div>
       <div class="card reveal">
-        <span class="step-tag">06</span>
+        <span class="step-tag">07</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 20a8 8 0 100-16 8 8 0 000 16zM12 8v8M8 12h8"/></svg></div>
         <h3>Technical Evolutions</h3>
         <p>Planning upgrade paths as simulation technology and training needs evolve over time.</p>
       </div>
       <div class="card reveal">
-        <span class="step-tag">07</span>
+        <span class="step-tag">08</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M13 2L3 14h8l-1 8 11-14h-9l1-6z"/></svg></div>
         <h3>Installation &amp; Commissioning</h3>
         <p>On-site installation, integration, and testing to bring systems fully into service.</p>
       </div>
       <div class="card reveal">
-        <span class="step-tag">08</span>
+        <span class="step-tag">09</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
         <h3>Activation</h3>
         <p>Bringing the facility live with a controlled first-run of real training sessions.</p>
       </div>
       <div class="card reveal">
-        <span class="step-tag">09</span>
+        <span class="step-tag">10</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v12H4z"/><path d="M9 20h6M12 16v4"/></svg></div>
         <h3>User Training</h3>
         <p>Hands-on training for faculty and technicians on operating and maintaining the equipment.</p>
       </div>
       <div class="card reveal">
-        <span class="step-tag">10</span>
+        <span class="step-tag">11</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a5 5 0 015-5h2a5 5 0 015 5"/><path d="M15.5 14.2A4 4 0 0121 18v1"/></svg></div>
         <h3>Team Building Support</h3>
         <p>Helping institutions structure and grow the staffing team behind a simulation program.</p>
       </div>
       <div class="card reveal">
-        <span class="step-tag">11</span>
+        <span class="step-tag">12</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Accreditation Guidance</h3>
         <p>Preparing documentation and practices aligned to recognized simulation accreditation standards.</p>
@@ -888,7 +954,8 @@
       <div>
         <h5>Consultancy</h5>
         <a href="#consultancy">Concept &amp; Facility Design</a>
-        <a href="#consultancy">Installation &amp; Activation</a>
+        <a href="#consultancy">Simulation Project Management</a>
+        <a href="#consultancy">Budget &amp; Financial Evolution</a>
         <a href="#consultancy">User Training</a>
         <a href="#consultancy">Accreditation Guidance</a>
       </div>
@@ -1021,7 +1088,7 @@
       return 'We supply healthcare simulation products — patient manikins (adult, pediatric, infant, maternal), task trainers, virtual & AR patient software, and simulation center control software. Scroll up to the Products section for the full list, or ask me about a specific one.';
     }
     if(text.includes('consult')){
-      return 'Our facility consultancy covers concept design, facility design, project management, simulation inventory, technical specification, installation & commissioning, activation, user training, team building support, and accreditation guidance — basically end-to-end support for building a simulation center.';
+      return 'Our facility consultancy covers concept design, facility design, project management, budget planning and financial evolution, simulation inventory, technical specification, installation & commissioning, activation, user training, team building support, and accreditation guidance — basically end-to-end support for building a simulation center.';
     }
     if(text.includes('price') || text.includes('cost') || text.includes('quote')){
       return 'Pricing depends on the scope of products or consultancy services you need. The best next step is to email our team at ' + CONTACT_EMAILS + ' with a bit about your project, and we\'ll put together a quote.';
