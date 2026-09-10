@@ -492,43 +492,6 @@
   .reveal.visible{opacity:1;transform:none;}
 
   ::selection{background:var(--terracotta);color:var(--white);}
-
-  /* Hidden owner admin bar — only shown via private URL trigger, see script */
-  .owner-admin-bar{
-    position:fixed;bottom:20px;right:20px;z-index:999;
-    display:flex;align-items:center;gap:14px;
-    background:var(--navy);color:var(--white);
-    padding:12px 16px;border-radius:12px;
-    box-shadow:0 12px 30px -8px rgba(0,0,0,0.4);
-    font-family:'Inter',sans-serif;font-size:0.85rem;
-  }
-  .owner-admin-label{
-    display:flex;align-items:center;gap:6px;
-    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
-    letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,0.6);
-  }
-  .owner-admin-label .dot{
-    width:6px;height:6px;border-radius:50%;background:#7CD68A;display:inline-block;
-    box-shadow:0 0 6px #7CD68A;
-  }
-  .owner-admin-bar a{color:var(--white);font-weight:600;text-decoration:underline;}
-  .owner-admin-bar a:hover{color:#F0B79A;}
-  .owner-admin-bar button{
-    background:none;border:none;color:rgba(255,255,255,0.5);cursor:pointer;
-    font-size:0.9rem;line-height:1;padding:2px;
-  }
-  .owner-admin-bar button:hover{color:var(--white);}
-  .owner-admin-sync-status{
-    font-family:'JetBrains Mono',monospace;font-size:0.68rem;
-    padding:4px 9px;border-radius:999px;
-    background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);
-    white-space:nowrap;cursor:default;
-  }
-  .owner-admin-sync-status[data-state="ok"]{color:#7CD68A;background:rgba(124,214,138,0.12);}
-  .owner-admin-sync-status[data-state="error"]{color:#F0B79A;background:rgba(240,183,154,0.12);}
-  @media (max-width:560px){
-    .owner-admin-bar{left:16px;right:16px;bottom:16px;flex-wrap:wrap;}
-  }
 </style>
 </head>
 <body>
@@ -570,17 +533,17 @@
   <div class="hero-grid"></div>
   <div class="wrap hero-inner">
     <div>
-      <span class="eyebrow" id="cmsHeroEyebrow">Healthcare Simulation &amp; Facility Consultancy</span>
-      <h1 id="cmsHeroHeadline">Clinical training environments where <em>competence comes before the real patient.</em></h1>
-      <p class="lead" id="cmsHeroLead">InnovateSim Technologies provides healthcare simulation products and advises hospitals, universities, and training centers on building the facilities that run them.</p>
+      <span class="eyebrow">Healthcare Simulation &amp; Facility Consultancy</span>
+      <h1>Clinical training environments where <em>competence comes before the real patient.</em></h1>
+      <p class="lead">InnovateSim Technologies provides healthcare simulation products and advises hospitals, universities, and training centers on building the facilities that run them.</p>
       <div class="hero-ctas">
         <a href="#products" class="btn btn-primary">Explore Products</a>
         <a href="#consultancy" class="btn btn-ghost">Consultancy Services</a>
       </div>
       <div class="hero-stats">
-        <div><strong id="cmsStatYears">14+</strong><span>Years in simulation</span></div>
-        <div><strong id="cmsStatFacilities">25+</strong><span>Facilities delivered</span></div>
-        <div><strong id="cmsStatCountries">6+</strong><span>Countries served</span></div>
+        <div><strong>14+</strong><span>Years in simulation</span></div>
+        <div><strong>25+</strong><span>Facilities delivered</span></div>
+        <div><strong>6+</strong><span>Countries served</span></div>
       </div>
     </div>
 
@@ -652,7 +615,7 @@
   <div class="wrap about-grid">
     <div class="reveal">
       <span class="eyebrow">About InnovateSim</span>
-      <h2 id="cmsAboutHeading">We build the environments where clinical skills are earned safely.</h2>
+      <h2>We build the environments where clinical skills are earned safely.</h2>
       <p id="cmsAboutP1" style="margin-top:18px;color:var(--ink-soft);font-size:1.02rem;">
         InnovateSim Technologies Inc. designs healthcare simulation products and advises hospitals, nursing and medical schools, and training centers on building the facilities that house them. From individual manikins to full-scale simulation centers, we cover the complete lifecycle: concept, design, installation, and ongoing support.
       </p>
@@ -661,7 +624,7 @@
       </p>
     </div>
     <div class="about-panel reveal">
-      <ul id="cmsAboutList">
+      <ul>
         <li><span class="num">01</span> Supplying simulation products with trusted service, and helping you incorporate them into your training programs</li>
         <li><span class="num">02</span> Simulation facility and technical infrastructure design</li>
         <li><span class="num">03</span> Installation, commissioning and activation</li>
@@ -806,7 +769,7 @@
       <h2>End-to-end guidance from first concept to accredited operation.</h2>
       <p>We advise healthcare institutions through every stage of building and running a simulation program.</p>
     </div>
-    <div class="grid-4" id="cmsConsultancyGrid">
+    <div class="grid-4">
       <div class="card reveal">
         <span class="step-tag">01</span>
         <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg></div>
@@ -889,7 +852,7 @@
       <span class="eyebrow">Why InnovateSim</span>
       <h2>One partner across the whole simulation lifecycle.</h2>
     </div>
-    <div class="why-grid" id="cmsWhyGrid">
+    <div class="why-grid">
       <div class="why-item reveal">
         <strong>Full-lifecycle</strong>
         <p>From product design to facility consultancy to accreditation guidance — no handoffs between vendors.</p>
@@ -919,19 +882,19 @@
 
       <div class="contact-info-item">
         <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg></div>
-        <div><h4>Email</h4><p id="cmsContactEmail">alidawoodian@yahoo.com<br>bahatomah@yahoo.com</p></div>
+        <div><h4>Email</h4><p>alidawoodian@yahoo.com<br>bahatomah@yahoo.com</p></div>
       </div>
       <div class="contact-info-item">
         <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.7a16 16 0 006.2 6.2l1.2-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg></div>
-        <div><h4>Phone</h4><p id="cmsContactPhone">+1 (647) 949-5728</p></div>
+        <div><h4>Phone</h4><p>+1 (647) 949-5728</p></div>
       </div>
       <div class="contact-info-item">
         <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 2a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5h10z"/><path d="M8 12a4 4 0 108 0 4 4 0 00-8 0z"/></svg></div>
-        <div><h4>WhatsApp</h4><p id="cmsContactWhatsapp"><a href="https://wa.me/16479495728" target="_blank" rel="noopener" style="color:var(--terracotta-dark);text-decoration:underline;">+1 (647) 949-5728</a></p></div>
+        <div><h4>WhatsApp</h4><p><a href="https://wa.me/16479495728" target="_blank" rel="noopener" style="color:var(--terracotta-dark);text-decoration:underline;">+1 (647) 949-5728</a></p></div>
       </div>
       <div class="contact-info-item">
         <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div><h4>Headquarters</h4><p id="cmsContactAddress">572 Laughren Cres, Milton, Ontario, L9T 0G5</p></div>
+        <div><h4>Headquarters</h4><p>572 Laughren Cres, Milton, Ontario, L9T 0G5</p></div>
       </div>
     </div>
 
@@ -1010,13 +973,6 @@
   </div>
 </footer>
 
-<div id="ownerAdminBar" class="owner-admin-bar" style="display:none;">
-  <span class="owner-admin-label"><span class="dot"></span>Admin</span>
-  <span id="ownerAdminSyncStatus" class="owner-admin-sync-status">Checking sheet sync…</span>
-  <a href="https://docs.google.com/spreadsheets/d/1HuH1YsDudYqJF067FLnSfPGgk3vkzJHtE9YkfH-pb30/edit?usp=sharing" target="_blank" rel="noopener">Manage Website Content →</a>
-  <button type="button" id="ownerAdminClose" aria-label="Hide admin bar">✕</button>
-</div>
-
 <script>
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');  const io = new IntersectionObserver((entries)=>{
@@ -1047,372 +1003,6 @@
     });
   }
 
-  // ============================================================
-  // Site content managed via Google Sheets — full site-wide sync
-  // ============================================================
-  // One Google Sheet, multiple tabs, one tab per content area. Share the
-  // sheet as "Anyone with the link — Viewer" so visitors' browsers can
-  // read it. Any tab that's missing, misnamed, empty, or unreachable is
-  // simply skipped — that section just keeps showing its built-in default
-  // content, so nothing on the site ever breaks because of the sheet.
-  //
-  // Tabs expected (exact names, case-sensitive):
-  //
-  //   Content       — Key | Value   (single text fields — see keys below)
-  //   Products      — Name | Tag | Description | ImageURL
-  //   Consultancy   — Title | Description
-  //   WhyUs         — Title | Description
-  //   About         — Text   (one bullet point per row, for the About panel list)
-  //
-  // "Content" tab keys recognized:
-  //   hero_eyebrow, hero_headline, hero_lead,
-  //   stat_years, stat_facilities, stat_countries,
-  //   about_heading, about_paragraph1, about_paragraph2,
-  //   contact_email, contact_phone, contact_whatsapp_number,
-  //   contact_whatsapp_display, contact_address
-  //
-  //   hero_headline supports basic HTML (e.g. <em>...</em> for the orange
-  //   emphasis). contact_email supports multiple addresses separated by a
-  //   comma — each is shown on its own line.
-  const GOOGLE_SHEET_ID = "1HuH1YsDudYqJF067FLnSfPGgk3vkzJHtE9YkfH-pb30"; // connected — InnovateSim content sheet
-
-  // Tracks whether each tab loaded successfully, so the hidden admin bar can
-  // show real sync status instead of leaving you guessing.
-  const sheetSyncStatus = {}; // tabName -> {ok: bool, rowCount: number, reason?: string}
-
-  async function fetchSheetTab(tabName){
-    try{
-      const url = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(tabName)}`;
-      const res = await fetch(url);
-      if(!res.ok){
-        const reason = (res.status === 401 || res.status === 403)
-          ? 'sheet not shared publicly, or tab missing'
-          : `HTTP ${res.status}`;
-        console.warn(`Sheet tab "${tabName}" returned ${res.status}. If this is 401/403, the sheet is not shared as "Anyone with the link — Viewer" yet, or this tab doesn't exist. Keeping default content for this section.`);
-        sheetSyncStatus[tabName] = {ok:false, rowCount:0, reason};
-        return null;
-      }
-      const raw = await res.text();
-      const jsonText = raw.substring(raw.indexOf('(') + 1, raw.lastIndexOf(')'));
-      const parsed = JSON.parse(jsonText);
-      const rows = (parsed.table && parsed.table.rows) || [];
-      sheetSyncStatus[tabName] = {ok: rows.length > 0, rowCount: rows.length, reason: rows.length === 0 ? 'tab is empty' : undefined};
-      return rows;
-    }catch(err){
-      sheetSyncStatus[tabName] = {ok:false, rowCount:0, reason: 'network/fetch error'};
-      throw err;
-    }
-  }
-
-  function cellText(row, index){
-    const c = row.c || [];
-    return c[index] && c[index].v != null ? String(c[index].v) : '';
-  }
-
-  // --- Products (Name | Tag | Description | ImageURL) ---
-  const productsGrid = document.getElementById('productsGrid');
-
-  function makeProductCard(name, tag, desc, imageUrl){
-    const card = document.createElement('div');
-    card.className = 'card';
-    const fallbackIconHtml = `<div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>`;
-    const photoHtml = imageUrl
-      ? `<img class="card-photo" src="${imageUrl}" alt="${name}">`
-      : fallbackIconHtml;
-    card.innerHTML = `
-      ${photoHtml}
-      <h3></h3>
-      <p></p>
-      <span class="tag"></span>
-    `;
-    card.querySelector('h3').textContent = name;
-    card.querySelector('p').textContent = desc;
-    card.querySelector('.tag').textContent = tag;
-    // If a sheet-provided image URL is broken/unreachable, fall back to the icon
-    // instead of leaving a broken-image placeholder on the card.
-    const img = card.querySelector('img.card-photo');
-    if(img){
-      img.addEventListener('error', ()=>{
-        img.outerHTML = fallbackIconHtml;
-      }, {once:true});
-    }
-    return card;
-  }
-
-  async function syncProducts(){
-    if(!productsGrid) return;
-    try{
-      const rows = await fetchSheetTab('Products');
-      if(!rows || rows.length === 0) return;
-      const cards = rows
-        .map(row=>{
-          const name = cellText(row, 0);
-          const tag = cellText(row, 1) || 'Simulation Product';
-          const desc = cellText(row, 2);
-          const imageUrl = cellText(row, 3) || null;
-          if(!name) return null;
-          return makeProductCard(name, tag, desc, imageUrl);
-        })
-        .filter(Boolean);
-      if(cards.length > 0){
-        productsGrid.innerHTML = '';
-        cards.forEach(card => productsGrid.appendChild(card));
-      }
-    }catch(err){
-      console.warn('Could not sync Products from sheet — showing defaults:', err);
-    }
-  }
-
-  // --- Consultancy (Title | Description) ---
-  const consultancyGrid = document.getElementById('cmsConsultancyGrid');
-
-  // A rotating set of general-purpose icons so sheet-driven consultancy cards
-  // don't all look identical — cycles through these in order.
-  const CONSULTANCY_ICON_PATHS = [
-    '<path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/>',
-    '<path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-8h6v8"/>',
-    '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
-    '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/>',
-    '<path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>',
-    '<path d="M12 20a8 8 0 100-16 8 8 0 000 16zM12 8v8M8 12h8"/>',
-    '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>'
-  ];
-
-  function makeConsultancyCard(index, title, desc){
-    const card = document.createElement('div');
-    card.className = 'card reveal';
-    const iconPath = CONSULTANCY_ICON_PATHS[(index - 1) % CONSULTANCY_ICON_PATHS.length];
-    card.innerHTML = `
-      <span class="step-tag"></span>
-      <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">${iconPath}</svg></div>
-      <h3></h3>
-      <p></p>
-    `;
-    card.querySelector('.step-tag').textContent = String(index).padStart(2, '0');
-    card.querySelector('h3').textContent = title;
-    card.querySelector('p').textContent = desc;
-    return card;
-  }
-
-  async function syncConsultancy(){
-    if(!consultancyGrid) return;
-    try{
-      const rows = await fetchSheetTab('Consultancy');
-      if(!rows || rows.length === 0) return;
-      const cards = rows
-        .map((row, i)=>{
-          const title = cellText(row, 0);
-          const desc = cellText(row, 1);
-          if(!title) return null;
-          return makeConsultancyCard(i + 1, title, desc);
-        })
-        .filter(Boolean);
-      if(cards.length > 0){
-        consultancyGrid.innerHTML = '';
-        cards.forEach(card => consultancyGrid.appendChild(card));
-        cards.forEach(el => io.observe(el));
-      }
-    }catch(err){
-      console.warn('Could not sync Consultancy from sheet — showing defaults:', err);
-    }
-  }
-
-  // --- Why Us (Title | Description) ---
-  const whyGrid = document.getElementById('cmsWhyGrid');
-
-  function makeWhyItem(title, desc){
-    const item = document.createElement('div');
-    item.className = 'why-item reveal';
-    item.innerHTML = `<strong></strong><p></p>`;
-    item.querySelector('strong').textContent = title;
-    item.querySelector('p').textContent = desc;
-    return item;
-  }
-
-  async function syncWhyUs(){
-    if(!whyGrid) return;
-    try{
-      const rows = await fetchSheetTab('WhyUs');
-      if(!rows || rows.length === 0) return;
-      const items = rows
-        .map(row=>{
-          const title = cellText(row, 0);
-          const desc = cellText(row, 1);
-          if(!title) return null;
-          return makeWhyItem(title, desc);
-        })
-        .filter(Boolean);
-      if(items.length > 0){
-        whyGrid.innerHTML = '';
-        items.forEach(el => whyGrid.appendChild(el));
-        items.forEach(el => io.observe(el));
-      }
-    }catch(err){
-      console.warn('Could not sync Why Us from sheet — showing defaults:', err);
-    }
-  }
-
-  // --- About bullet list (single column: Text) ---
-  const aboutList = document.getElementById('cmsAboutList');
-
-  async function syncAboutList(){
-    if(!aboutList) return;
-    try{
-      const rows = await fetchSheetTab('About');
-      if(!rows || rows.length === 0) return;
-      const items = rows
-        .map((row, i)=>{
-          const text = cellText(row, 0);
-          if(!text) return null;
-          const li = document.createElement('li');
-          li.innerHTML = `<span class="num">${String(i + 1).padStart(2,'0')}</span> `;
-          li.appendChild(document.createTextNode(text));
-          return li;
-        })
-        .filter(Boolean);
-      if(items.length > 0){
-        aboutList.innerHTML = '';
-        items.forEach(li => aboutList.appendChild(li));
-      }
-    }catch(err){
-      console.warn('Could not sync About list from sheet — showing defaults:', err);
-    }
-  }
-
-  // --- Single text fields (Content tab: Key | Value) ---
-  async function syncContent(){
-    try{
-      const rows = await fetchSheetTab('Content');
-      if(!rows || rows.length === 0) return;
-      const map = {};
-      rows.forEach(row=>{
-        const key = cellText(row, 0).trim();
-        const value = cellText(row, 1);
-        if(key) map[key] = value;
-      });
-
-      const setText = (id, key) => {
-        if(map[key] == null || map[key] === '') return;
-        const el = document.getElementById(id);
-        if(el) el.textContent = map[key];
-      };
-      const setHtml = (id, key) => {
-        if(map[key] == null || map[key] === '') return;
-        const el = document.getElementById(id);
-        if(el) el.innerHTML = map[key];
-      };
-
-      setText('cmsHeroEyebrow', 'hero_eyebrow');
-      setHtml('cmsHeroHeadline', 'hero_headline');
-      setText('cmsHeroLead', 'hero_lead');
-      setText('cmsStatYears', 'stat_years');
-      setText('cmsStatFacilities', 'stat_facilities');
-      setText('cmsStatCountries', 'stat_countries');
-      setText('cmsAboutHeading', 'about_heading');
-      setText('cmsAboutP1', 'about_paragraph1');
-      setText('cmsAboutP2', 'about_paragraph2');
-      setText('cmsContactAddress', 'contact_address');
-      setText('cmsContactPhone', 'contact_phone');
-
-      if(map.contact_email){
-        const el = document.getElementById('cmsContactEmail');
-        if(el){
-          el.innerHTML = map.contact_email.split(',').map(e=>e.trim()).filter(Boolean).join('<br>');
-        }
-      }
-      if(map.contact_whatsapp_number){
-        const el = document.getElementById('cmsContactWhatsapp');
-        if(el){
-          const display = map.contact_whatsapp_display || map.contact_whatsapp_number;
-          const digits = map.contact_whatsapp_number.replace(/[^0-9]/g, '');
-          el.innerHTML = `<a href="https://wa.me/${digits}" target="_blank" rel="noopener" style="color:var(--terracotta-dark);text-decoration:underline;">${display}</a>`;
-        }
-      }
-    }catch(err){
-      console.warn('Could not sync Content fields from sheet — showing defaults:', err);
-    }
-  }
-
-  async function runAllSheetSyncs(){
-    await Promise.allSettled([
-      syncContent(),
-      syncProducts(),
-      syncConsultancy(),
-      syncWhyUs(),
-      syncAboutList()
-    ]);
-    renderSyncStatus();
-  }
-
-  function renderSyncStatus(){
-    const el = document.getElementById('ownerAdminSyncStatus');
-    if(!el) return;
-    const tabs = ['Content','Products','Consultancy','WhyUs','About'];
-    const okCount = tabs.filter(t => sheetSyncStatus[t] && sheetSyncStatus[t].ok).length;
-
-    if(okCount === tabs.length){
-      el.dataset.state = 'ok';
-      el.textContent = `Sheet sync: all ${tabs.length} tabs connected ✓`;
-    } else if(okCount === 0){
-      el.dataset.state = 'error';
-      const reason = (sheetSyncStatus.Content && sheetSyncStatus.Content.reason) || 'not reachable';
-      el.textContent = `Sheet sync: not connected (${reason})`;
-    } else {
-      el.dataset.state = 'error';
-      const failing = tabs.filter(t => !(sheetSyncStatus[t] && sheetSyncStatus[t].ok));
-      el.textContent = `Sheet sync: ${okCount}/${tabs.length} tabs connected — check: ${failing.join(', ')}`;
-    }
-    el.title = tabs.map(t => {
-      const s = sheetSyncStatus[t];
-      if(!s) return `${t}: unknown`;
-      return s.ok ? `${t}: ✓ (${s.rowCount} rows)` : `${t}: ✗ (${s.reason || 'failed'})`;
-    }).join('\n');
-  }
-
-  if(GOOGLE_SHEET_ID){
-    runAllSheetSyncs();
-  }
-
-  // --- Hidden owner admin bar ---
-  // Visit the site with #admin at the end of the URL once (e.g. yoursite.com/#admin)
-  // to reveal this bar. It then stays remembered on this device until you click the
-  // ✕ to hide it again. Regular visitors never see it or know it exists.
-  (function(){
-    const ADMIN_KEY = 'innovatesim_owner_admin';
-    const bar = document.getElementById('ownerAdminBar');
-    const closeBtn = document.getElementById('ownerAdminClose');
-    if(!bar) return;
-
-    function showBar(){ bar.style.display = 'flex'; }
-    function hideBar(){ bar.style.display = 'none'; }
-
-    function checkTrigger(){
-      try{
-        if(window.location.hash === '#admin'){
-          localStorage.setItem(ADMIN_KEY, 'true');
-          history.replaceState(null, '', window.location.pathname + window.location.search);
-        }
-        if(localStorage.getItem(ADMIN_KEY) === 'true'){
-          showBar();
-        }
-      }catch(err){
-        if(window.location.hash === '#admin') showBar();
-      }
-    }
-
-    checkTrigger();
-    // Handles the case where #admin is added to the URL while already on this page
-    // (a same-document navigation that doesn't re-run scripts on its own).
-    window.addEventListener('hashchange', checkTrigger);
-
-    if(closeBtn){
-      closeBtn.addEventListener('click', ()=>{
-        hideBar();
-        try{ localStorage.removeItem(ADMIN_KEY); }catch(err){}
-      });
-    }
-  })();
-
   // --- Chatbot widget ---
   const chatbotMessages = document.getElementById('chatbotMessages');
   const chatbotForm = document.getElementById('chatbotForm');
@@ -1434,23 +1024,13 @@
     const text = rawText.toLowerCase();
 
     if(text.includes('product')){
-      const titles = [...document.querySelectorAll('#productsGrid .card h3')].map(el => el.textContent).filter(Boolean);
-      if(titles.length > 0){
-        return 'We supply healthcare simulation products — ' + titles.join(', ') + '. Scroll up to the Products section for full details, or ask me about a specific one.';
-      }
-      return 'We supply healthcare simulation products — patient manikins, task trainers, and virtual patient software. Scroll up to the Products section for the full list.';
+      return 'We supply healthcare simulation products — patient manikins (adult, pediatric, infant, maternal), task trainers, virtual & AR patient software, and simulation center control software. Scroll up to the Products section for the full list, or ask me about a specific one.';
     }
     if(text.includes('consult')){
-      const titles = [...document.querySelectorAll('#cmsConsultancyGrid .card h3')].map(el => el.textContent).filter(Boolean);
-      if(titles.length > 0){
-        return 'Our facility consultancy covers ' + titles.join(', ') + ' — basically end-to-end support for building a simulation center.';
-      }
-      return 'Our facility consultancy covers concept design, facility design, project management, and more — basically end-to-end support for building a simulation center.';
+      return 'Our facility consultancy covers concept design, facility design, project management, budget planning and financial evolution, simulation inventory, technical specification, installation & commissioning, activation, user training, team building support, and accreditation guidance — basically end-to-end support for building a simulation center.';
     }
     if(text.includes('price') || text.includes('cost') || text.includes('quote')){
-      const emailEl = document.getElementById('cmsContactEmail');
-      const emails = emailEl ? emailEl.textContent.replace(/\s+/g,' ').trim() : CONTACT_EMAILS;
-      return 'Pricing depends on the scope of products or consultancy services you need. The best next step is to email our team at ' + emails + ' with a bit about your project, and we\'ll put together a quote.';
+      return 'Pricing depends on the scope of products or consultancy services you need. The best next step is to email our team at ' + CONTACT_EMAILS + ' with a bit about your project, and we\'ll put together a quote.';
     }
     if(text.includes('accredit')){
       return 'We help institutions prepare documentation and practices aligned with recognized simulation accreditation standards as part of our consultancy services.';
@@ -1462,9 +1042,7 @@
       return 'You can reach us on WhatsApp — see the WhatsApp entry in the Contact section on this page.';
     }
     if(text.includes('contact') || text.includes('email') || text.includes('reach') || text.includes('call') || text.includes('phone')){
-      const emailEl = document.getElementById('cmsContactEmail');
-      const emailsHtml = emailEl ? emailEl.innerHTML : CONTACT_EMAILS;
-      return 'You can reach our team directly at <a href="' + MAILTO_LINK + '">' + emailsHtml + '</a>, or via the WhatsApp link in the Contact section.';
+      return 'You can reach our team directly at <a href="' + MAILTO_LINK + '">' + CONTACT_EMAILS + '</a>, or via the WhatsApp link in the Contact section.';
     }
     if(text.includes('hello') || text.includes('hi') || text.includes('hey')){
       return 'Hello! Ask me about our healthcare simulation products, facility consultancy services, or how to get in touch with our team.';
